@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <button id="theme-toggle">🌙 Темная тема</button>
+
   <h1>Программа для управления учебным расписанием</h1>
 
   <form id="schedule-form">
@@ -114,6 +116,22 @@
     });
 
     renderSchedule();
+
+    const themeToggle = document.getElementById('theme-toggle');
+
+// Проверка сохранённой темы
+    if (localStorage.getItem('theme') === 'dark') {
+       document.body.classList.add('dark');
+      themeToggle.textContent = '☀️ Светлая тема';
+}
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  themeToggle.textContent = isDark ? '☀️ Светлая тема' : '🌙 Темная тема';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
   </script>
 
 </body>

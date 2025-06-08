@@ -99,6 +99,16 @@ body {
       border-bottom: 3px solid #333;
     }
 
+    body,
+    form,
+    table,
+    button,
+    th,
+    td {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -140,3 +150,49 @@ body {
     padding: 4px 10px;
   }
 }
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background-color: #1976d2;
+    color: white;
+    z-index: 1000;
+ }
+
+ body.dark {
+  background: #121212;
+  color: #f0f0f0;
+}
+
+body.dark form,
+body.dark table {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark th {
+  background-color: #2c2c2c;
+}
+
+body.dark td {
+  border-color: #444;
+}
+
+body.dark .delete-btn {
+  background-color: #c62828;
+}
+
+body.dark .delete-btn:hover {
+  background-color: #8e0000;
+}
+
+body.dark button {
+  background-color: #333;
+  color: white;
+}
+
